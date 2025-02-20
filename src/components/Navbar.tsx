@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { Navbar, MobileNav, Typography, Button, IconButton, Input } from "@/components/MaterialTailwindWrapper";
 import { useAuth } from "@/context/AuthContext";
+import Link from "next/link";
+
 
 
 export default function NavbarWithSearch() {
@@ -19,15 +21,16 @@ export default function NavbarWithSearch() {
 
   const navList = (
     <ul className="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-6">
-      <li><a href="#" className="text-blue-gray-700 hover:text-blue-500">Home</a></li>
-      <li><a href="#" className="text-blue-gray-700 hover:text-blue-500">Categories</a></li>
-      <li><a href="/about" className="text-blue-gray-700 hover:text-blue-500">About</a></li>
-      <li><a href="#" className="text-blue-gray-700 hover:text-blue-500">Contact</a></li>
-    </ul>
+        <li><Link href="/" className="text-blue-gray-700 hover:text-blue-500">Home</Link></li>
+        <li><Link href="#" className="text-blue-gray-700 hover:text-blue-500">Categories</Link></li>
+        <li><Link href="/about" className="text-blue-gray-700 hover:text-blue-500">About</Link></li>
+        <li><Link href="#" className="text-blue-gray-700 hover:text-blue-500">Contact</Link></li>
+        <li><Link href="/profile" className="text-blue-gray-700 hover:text-blue-500">Profile</Link></li>
+        <li><Link href="/signup" className="text-blue-gray-700 hover:text-blue-500">Signup</Link></li>
+        </ul>
   );
-
   return (
-    <Navbar className="max-w-screen mx-2 bg-white py-2">
+    <Navbar className=" bg-white py-2">
       <div className="flex items-center justify-between">
         <Typography as="a" href="#" className="mr-4 text-xl font-bold text-blue-gray-700">MyStore</Typography>
         <div className="hidden lg:block">{navList}</div>

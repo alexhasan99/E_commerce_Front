@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Product } from "@/utils/interfaces";
-import fetchProducts from "@/utils/ProductFetcher";
+import { Product } from "@/utils/interfaces/Product";
+import fetchProducts from "@/utils/api/ProductFetcher";
 import ProductCard from "@/components/ProductCard";
 
 export default function ProductGrid({ category, searchQuery }: { category?: string; searchQuery?: string }) {
@@ -33,7 +33,7 @@ export default function ProductGrid({ category, searchQuery }: { category?: stri
     fetchProducts
       .getProducts()
       .then((data) => {
-        console.log("Fetched products:", data); // Kontrollera vad som returneras
+        console.log("Fetched products:", data); 
         setProducts(data);
         setLoading(false);
       })

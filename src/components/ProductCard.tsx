@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from "@/utils/interfaces";
+import { Product } from "@/utils/interfaces/Product";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (

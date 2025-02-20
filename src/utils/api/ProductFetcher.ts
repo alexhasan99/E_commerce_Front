@@ -1,6 +1,6 @@
-import { Product } from "./interfaces";
+import { Product } from "../interfaces/Product";
 
-const API_URL = "http://localhost:8081/api/products";
+const API_URL = "http://localhost:8082/api/products";
 
 
 const fetchProducts = {
